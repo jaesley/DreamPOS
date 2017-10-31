@@ -2,11 +2,15 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
   describe '#index' do
-    
-    before(:each) { get :index }
+    let!(:user) { FactoryBot.create(:user) }
 
-    context "when user is not logged in" do
-      before(:each) { sign_in user }
+
+    context "when user is logged in" do
+      before(:each) do
+        sign_in user
+        get :index
+      end
+
       it 'responds with a status code of 200' do
         expect(response.status).to eq 200
       end
@@ -16,13 +20,16 @@ RSpec.describe PagesController, type: :controller do
       end
     end
 
-    context "when user is logged in" do
+    context "when user is not logged in" do
+      before(:each) do
+        get :index
+      end
       it 'responds with a status code of 302' do
         expect(response.status).to eq 302
       end
 
       it 'renders the index page' do
-        expect(response).to redirect_to(user_path)
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
