@@ -1,24 +1,5 @@
-# README
+# DreamPOS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## mission
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+DreamPOS is intended to provide an open-source inventory management system for independent comic book retailers.
