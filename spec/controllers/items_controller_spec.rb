@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PagesController, type: :controller do
+RSpec.describe ItemsController, type: :controller do
   describe '#index' do
     let!(:user) { FactoryBot.create(:user) }
 
@@ -23,6 +23,7 @@ RSpec.describe PagesController, type: :controller do
       before(:each) do
         get :index
       end
+
       it 'responds with a status code of 302' do
         expect(response.status).to eq 302
       end
