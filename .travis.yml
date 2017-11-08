@@ -3,6 +3,8 @@ rvm:
  - 2.4.1
 env:
   - DB=postgresql
+before_install:
+  gem install rake -v '12.2.1'
 script:
   - bundle exec rake spec
 before_script:
