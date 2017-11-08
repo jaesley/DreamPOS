@@ -1,5 +1,15 @@
-<% @items.each do |item| %>
-  <p>
-    <%= item.title %>
-  </p>
-<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>On Hand</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody><% @items.each do |item| %>
+    <tr>
+      <th scope="row" class="col-md-1"><%= item.quantity %></th>
+      <td class="col-md-11"><%= item.title %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

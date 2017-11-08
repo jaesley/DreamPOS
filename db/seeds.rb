@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Store.create(name: 'The Dreaming')
+
+Item.create(barcode: '1234', title: 'Thing #1', quantity: 1, store: Store.first)
+Item.create(barcode: '5678', title: 'Thing #2', quantity: 10, store: Store.first)
+Item.create(barcode: '9012', title: 'Stuff #100', quantity: 100, store: Store.first)
