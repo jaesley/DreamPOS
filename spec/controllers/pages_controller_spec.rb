@@ -28,7 +28,7 @@ RSpec.describe PagesController, type: :controller do
         expect(response.status).to eq 302
       end
 
-      it 'renders the index page' do
+      it 'redirects to login page' do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
