@@ -1,3 +1,42 @@
-<p>
-  Welcome to the main page.
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h2>Search Inventory</h2>
+        </div>
+
+        <div class="panel-body">
+          <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h2>Add Inventory</h2>
+        </div>
+
+        <div class="panel-body">
+          This is where CSV upload form will happen.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h2>Search Customers</h2>
+        </div>
+
+        <div class="panel-body">
+          This will be a customer search box.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
