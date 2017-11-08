@@ -17,6 +17,10 @@ RSpec.describe ItemsController, type: :controller do
       it 'renders the index page' do
         expect(response).to render_template(:index)
       end
+
+      it 'assigns items' do
+        expect(assigns[:items]).to eq Item.all
+      end
     end
 
     context "when user is not logged in" do
