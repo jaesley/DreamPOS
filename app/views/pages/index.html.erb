@@ -6,8 +6,8 @@
           <h2>Search Inventory</h2>
         </div>
 
-        <div class="panel-body">
-          <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+        <div class="panel-body text-center">
+          <%= form_tag(items_path, :method => "get") do %>
             <%= text_field_tag :search %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>
