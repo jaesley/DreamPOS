@@ -9,6 +9,5 @@ RSpec.describe User, type: :model do
   end
 
   context '#associations' do
-    it { is_expected.to belong_to :store }
   end
 end
