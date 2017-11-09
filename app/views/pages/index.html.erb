@@ -8,8 +8,14 @@
 
         <div class="panel-body text-center">
           <%= form_tag(items_path, :method => "get") do %>
-            <%= text_field_tag :search %>
-            <%= submit_tag "Search", :name => nil %>
+            <div class="input-group">
+              <%= text_field_tag :search, nil, class: 'form-control' %>
+              <span class="input-group-btn">
+                <%= button_tag(class: "btn btn-default") do %>
+                  <span class="glyphicon glyphicon-search"></span>
+                <% end %>
+              </span>
+            </div>
           <% end %>
         </div>
       </div>
@@ -34,7 +40,16 @@
         </div>
 
         <div class="panel-body">
-          This will be a customer search box.
+          <%= form_tag(users_path, :method => "get") do %>
+            <div class="input-group">
+              <%= text_field_tag :search, nil, class: 'form-control' %>
+              <span class="input-group-btn">
+                <%= button_tag(class: "btn btn-default") do %>
+                  <span class="glyphicon glyphicon-search"></span>
+                <% end %>
+              </span>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

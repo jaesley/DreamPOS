@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe ItemsController, type: :controller do
+RSpec.describe UsersController, type: :controller do
   describe '#index' do
     let!(:user) { FactoryBot.create(:user) }
-    let!(:item) { FactoryBot.create(:item) }
 
     context "when user is logged in" do
       context "and gives no search params" do
@@ -20,19 +19,19 @@ RSpec.describe ItemsController, type: :controller do
           expect(response).to render_template(:index)
         end
 
-        it 'assigns items to all items' do
-          expect(assigns[:items]).to eq Item.all
+        it 'assigns users to all users' do
+          expect(assigns[:users]).to eq User.all
         end
       end
 
       context "and gives search params" do
         before(:each) do
           sign_in user
-          get :index, params: { search: item.title.downcase }
+          get :index, params: { search: user.email.downcase }
         end
 
-        it 'assigns items to correct search results' do
-          expect(assigns[:items]).to include item
+        it 'assigns users to correct search results' do
+          expect(assigns[:users]).to include user
         end
       end
     end
