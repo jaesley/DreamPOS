@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    barcode "01234"
-    title "MyString"
-    quantity 1
+    barcode { rand(00000000000000..99999999999999) }
+    title { Faker::Book.title }
+    quantity { rand(0..100) }
   end
 end

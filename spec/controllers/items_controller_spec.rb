@@ -20,7 +20,7 @@ RSpec.describe ItemsController, type: :controller do
           expect(response).to render_template(:index)
         end
 
-        it 'assigns items to all items' do
+        it 'assigns @items instance variable to all items' do
           expect(assigns[:items]).to eq Item.all
         end
       end
@@ -31,7 +31,7 @@ RSpec.describe ItemsController, type: :controller do
           get :index, params: { search: item.title.downcase }
         end
 
-        it 'assigns items to correct search results' do
+        it 'assigns @items instance variable to correct search results' do
           expect(assigns[:items]).to include item
         end
       end

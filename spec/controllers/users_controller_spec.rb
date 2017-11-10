@@ -19,7 +19,7 @@ RSpec.describe UsersController, type: :controller do
           expect(response).to render_template(:index)
         end
 
-        it 'assigns users to all users' do
+        it 'assigns @users instance variable to all users' do
           expect(assigns[:users]).to eq User.all
         end
       end
@@ -30,7 +30,7 @@ RSpec.describe UsersController, type: :controller do
           get :index, params: { search: user.email.downcase }
         end
 
-        it 'assigns users to correct search results' do
+        it 'assigns @users instance variable to correct search results' do
           expect(assigns[:users]).to include user
         end
       end

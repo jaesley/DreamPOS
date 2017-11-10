@@ -3,9 +3,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:search]
-      search = params[:search].downcase
-      sanitized_search = search.gsub(/[%_]/, '\\\\\0')
-      @users = User.where(User.arel_table[:email].lower.matches("%#{sanitized_search}%"))
+      @users = User.search(params[:search])
     else
       @users = User.all
     end

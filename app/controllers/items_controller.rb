@@ -3,9 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     if params[:search]
-      search = params[:search].downcase
-      sanitized_search = search.gsub(/[%_]/, '\\\\\0')
-      @items = Item.where(Item.arel_table[:title].lower.matches("%#{sanitized_search}%").or(Item.arel_table[:barcode].matches("%#{sanitized_search}%")))
+      @items = Item.search(params[:search])
     else
       @items = Item.all
     end
