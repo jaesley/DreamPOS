@@ -212,7 +212,6 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-controller-testing
-  rake
   rspec-rails
   shoulda-matchers
   simplecov
