@@ -1,15 +1,79 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
       image here
     </div>
 
-    <div class="col-md-4">
-      stuff
+    <div class="col-md-6">
+      <div class="row vertical-align">
+        <div class="col-md-6">
+          <h2><%= @item.title %></h2>
+        </div>
+
+        <div class="col-md-6">
+          <h2><small>#<%= @item.issue %></small></h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <dl>
+            <dt>Author(s)</dt>
+            <dd>Name</dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <dl>
+            <dt>Price</dt>
+            <dd>$<%= number_with_precision(@item.price, precision: 2) %></dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <dl>
+            <dt>Artist(s)</dt>
+            <dd>Name</dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <dl>
+            <dt>On Hand</dt>
+            <dd><%= @item.quantity %></dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <dl>
+            <dt>Publisher</dt>
+            <dd>DC</dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <dl>
+            <dt>Release</dt>
+            <dd><%= @item.release_date %></dd>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <dl>
+            <dt>Description</dt>
+            <dd class="text-justify"><%= @item.description %></dd>
+          </dl>
+        </div>
+      </div>
     </div>
 
-    <div class="col-md-4">
-      subscribers here
+    <div class="col-md-3=4">
+      <h3 class="text-center">Subscribers</h3>
     </div>
   </div>
 </div>
