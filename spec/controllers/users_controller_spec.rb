@@ -27,7 +27,7 @@ RSpec.describe UsersController, type: :controller do
       context "and gives search params" do
         before(:each) do
           sign_in user
-          get :index, params: { search: user.email.downcase }
+          get :index, params: { search: user.email }
         end
 
         it 'assigns @users instance variable to correct search results' do
