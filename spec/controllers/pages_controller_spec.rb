@@ -4,7 +4,6 @@ RSpec.describe PagesController, type: :controller do
   describe '#index' do
     let!(:user) { FactoryBot.create(:user) }
 
-
     context "when user is logged in" do
       before(:each) do
         sign_in user

@@ -1,0 +1,13 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody><% @users.each do |user| %>
+    <tr>
+      <td scope="row" class="col-md-1"><%= user.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

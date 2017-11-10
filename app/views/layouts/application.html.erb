@@ -13,7 +13,7 @@
     <nav class="navbar navbar-default navbar-expand-sm" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="<%= %>">DreamPOS</a>
+          <%= link_to 'DreamPOS', authenticated_root_path, class: "navbar-brand" %>
         </div>
         <% if current_user %>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
