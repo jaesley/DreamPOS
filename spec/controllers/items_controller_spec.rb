@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
-  describe '#index' do
-    let!(:user) { FactoryBot.create(:user) }
-    let!(:item) { FactoryBot.create(:item) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:item) { FactoryBot.create(:item) }
 
+  describe '#index' do
     context "when user is logged in" do
       context "and gives no search params" do
         before(:each) do
@@ -49,6 +49,25 @@ RSpec.describe ItemsController, type: :controller do
       it 'redirects to login page' do
         expect(response).to redirect_to(new_user_session_path)
       end
+    end
+  end
+
+  describe '#show' do
+    before(:each) do
+      sign_in user
+      get :show, params: { id: item.id }
+    end
+
+    it 'responds with a status code of 200' do
+      expect(response.status).to eq 200
+    end
+
+    it 'renders the show page' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'assigns @item instance variable to correct item' do
+      expect(assigns[:item]).to eq item
     end
   end
 end
