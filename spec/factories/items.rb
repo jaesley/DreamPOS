@@ -4,7 +4,7 @@ FactoryBot.define do
     title { Faker::Book.title }
     quantity { rand(0..100) }
     issue { rand(1..999)}
-    price { rand(4.99..24.99) }
+    price { rand(4.99..24.99).round(2) }
     release_date { Time.at(rand * Time.now.to_i) }
     description { Faker::Hipster.paragraph }
   end
