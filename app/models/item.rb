@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :barcode, :title, :quantity, presence: true
+  validates :barcode, :title, :quantity, :price, :release_date, :description, :issue, presence: true
   validates_uniqueness_of :barcode, case_sensitive: false
 
   def self.search(query)
