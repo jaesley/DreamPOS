@@ -5,13 +5,17 @@
     </div>
 
     <div class="col-md-6">
-      <div class="row vertical-align">
+      <div class="row">
         <div class="col-md-6">
-          <h2><%= @item.title %></h2>
+          <h2><%= @item.title %><br />
+          <small>#<%= @item.issue %></small></h2>
         </div>
 
         <div class="col-md-6">
-          <h2><small>#<%= @item.issue %></small></h2>
+          <dl class="top-margin">
+            <dt>Product ID</dt>
+            <dd><%= @item.barcode %></dd>
+          </dl>
         </div>
       </div>
 
