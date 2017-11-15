@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'factory_bot_rails'
 SimpleCov.start 'rails' do
   add_filter do |source_file|
     source_file.lines.count < 5
