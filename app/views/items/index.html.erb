@@ -3,12 +3,20 @@
     <tr>
       <th>On Hand</th>
       <th>Title</th>
+      <th>Issue</th>
+      <th>Price</th>
+      <th>Release</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody><% @items.each do |item| %>
     <tr>
       <th scope="row" class="col-md-1"><%= item.quantity %></th>
-      <td class="col-md-11"><%= item.title %></td>
+      <td class="col-md-2"><%= link_to item.title, item_path(item) %></td>
+      <td class="col-md-1">#<%= item.issue %></td>
+      <td class="col-md-1">$<%= item.price %></td>
+      <td class="col-md-1"><%= item.release_date %></td>
+      <td class="col-md-6"><%= item.description %></td>
     </tr>
   <% end %>
   </tbody>
