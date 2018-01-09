@@ -4,6 +4,7 @@ RSpec.describe PagesController, type: :controller do
   describe '#index' do
     let!(:user) { FactoryBot.create(:user) }
 
+
     context "when user is logged in" do
       before(:each) do
         sign_in user
@@ -17,6 +18,10 @@ RSpec.describe PagesController, type: :controller do
       it 'renders the index page' do
         expect(response).to render_template(:index)
       end
+
+
+
+
     end
 
     context "when user is not logged in" do
