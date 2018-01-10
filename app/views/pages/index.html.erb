@@ -28,9 +28,11 @@
         </div>
 
         <div class="panel-body">
-          <%= form_for @shipment do |f| %>
-            <%= form.file_field :csv %>
-          <%= end %>
+          <div class="custom-file">
+            <%= form_for @shipment do |f| %>
+              <%= f.file_field :picture %>
+            <% end %>
+        </div>
         </div>
       </div>
     </div>
