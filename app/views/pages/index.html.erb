@@ -28,7 +28,9 @@
         </div>
 
         <div class="panel-body">
-          This is where CSV upload form will happen.
+          <%= form_for @shipment do |f| %>
+            <%= form.file_field :csv %>
+          <%= end %>
         </div>
       </div>
     </div>
