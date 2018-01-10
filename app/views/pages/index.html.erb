@@ -28,11 +28,17 @@
         </div>
 
         <div class="panel-body">
-          <div class="custom-file">
-            <%= form_for @shipment do |f| %>
-              <%= f.file_field :picture %>
-            <% end %>
-        </div>
+          <div class="input-group">
+            <label class="input-group-btn">
+              <span class="btn btn-primary">
+                Browse...
+                <%= form_for @shipment do |f| %>
+                  <%= f.file_field :picture, style: 'display: none;' %>
+                <% end %>
+              </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+          </div>
         </div>
       </div>
     </div>
