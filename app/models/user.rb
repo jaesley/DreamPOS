@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :shipments
+
   def self.search(query)
     sanitized_query = query.downcase.gsub(/[%_]/, '\\\\\0')
     User.where(User.arel_table[:email].lower.matches("%#{sanitized_query}%"))

@@ -1,8 +1,8 @@
 class CreateShipments < ActiveRecord::Migration[5.1]
   def change
     create_table :shipments do |t|
-      t.string :date
-      t.string :receiver_id
+      t.date :date_received
+      t.integer :receiver_id
 
       t.timestamps
     end

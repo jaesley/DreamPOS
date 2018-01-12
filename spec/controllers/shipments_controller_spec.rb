@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ShipmentsController, type: :controller do
   describe '#show' do
     let!(:user) { FactoryBot.create(:user) }
-    let!(:shipment) { FactoryBot.create(:shipment) }
+    let!(:shipment) { Shipment.create(receiver: user, date_receiver: Date.today) }
 
     context "when user is logged in" do
       before(:each) do
