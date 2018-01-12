@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :show]
   resources :users, only: [:index]
-  resources :shipments, only: [:show, :new, :index]
+  resources :shipments, only: [:show, :create, :index]
 end

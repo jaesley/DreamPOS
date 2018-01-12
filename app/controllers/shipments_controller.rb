@@ -1,11 +1,15 @@
 class ShipmentsController < ApplicationController
+  require 'csv'
   before_action :authenticate_user!
 
-  def show
-    @shipment = Shipment.find(params[:id])
-  end
-
   def create
-    @shipment = Shipment.new
+    @shipment = Shipment.new(params[:shipment])
+    @shipment.receiver = current_user
+
+    if @shipment.save
+      redirect_to shipment_path
+    else
+      # i dunno yet
+    end
   end
 end
