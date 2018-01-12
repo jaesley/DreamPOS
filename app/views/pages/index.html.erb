@@ -29,15 +29,20 @@
 
         <div class="panel-body">
           <div class="input-group">
-            <label class="input-group-btn">
+            <label class="input-group-prepend">
               <span class="btn btn-primary">
                 Browse...
-                <%= form_for @shipment do |f| %>
-                  <%= f.file_field :picture, style: 'display: none;' %>
-                <% end %>
+                <%= form_for @shipment, url: new_shipment_path, method: 'get' do |f| %>
+                  <%= f.file_field :csv, style: 'display: none;' %>
               </span>
             </label>
             <input type="text" class="form-control" readonly>
+            <span class="input-group-btn">
+              <%= button_tag(class: "btn btn-default") do %>
+                <span class="glyphicon glyphicon-upload"></span>
+              <% end %>
+            </span>
+                            <% end %>
           </div>
         </div>
       </div>
